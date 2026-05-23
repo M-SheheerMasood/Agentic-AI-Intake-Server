@@ -1,0 +1,62 @@
+{
+    "inventory_db": {
+        "pricing": {
+            "base_rate_per_gram": 10,
+            "machine_hourly_rate": 150,
+            "finishing_kobe_lacquer": 300,
+            "keychain_flat": 500
+        },
+        "stock": {
+            "pla_colors": ["black", "white", "silk_gold", "red"],
+            "petg_colors": ["black", "clear"]
+        }
+    },
+    "my_tools": [
+        {
+            "type": "function",
+            "function": {
+                "name": "calculate_quote",
+                "description": "Calculates the price for standard 3D printed items or when filament usage in grams is known from a G-code file.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "item_type": {
+                            "type": "string",
+                            "description": "The type of item. E.g., 'keychain', 'prop', or 'gcode_print'."
+                        },
+                        "quantity_or_grams": {
+                            "type": "integer",
+                            "description": "The quantity of items, OR the amount of filament in grams."
+                        }
+                    },
+                    "required": ["item_type", "quantity_or_grams"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "log_manual_review",
+                "description": "Saves the user's preferences for an un-sliced STL or 3MF file so a human can slice it and review it later.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "filepath": {
+                            "type": "string",
+                            "description": "The local file path of the STL or 3MF file."
+                        },
+                        "infill": {
+                            "type": "string",
+                            "description": "The user's requested infill percentage (e.g., '20%')."
+                        },
+                        "color": {
+                            "type": "string",
+                            "description": "The user's requested filament color."
+                        }
+                    },
+                    "required": ["filepath", "infill", "color"]
+                }
+            }
+        }
+    ]
+}
