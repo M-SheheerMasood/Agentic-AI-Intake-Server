@@ -16,7 +16,7 @@ inventory_db = app_data['inventory_db']
 def calculate_quote(item_type: str, quantity_or_grams: int):
     """Calculates the price for standard 3D printed items or when filament usage in grams is known."""
 
-    print(f"\n[Agent Activity] ⚡ Executing 'calculate_quote' -> Item: {item_type}, Qty: {quantity_or_grams}")
+    print(f"\n[Agent Activity] Executing 'calculate_quote' -> Item: {item_type}, Qty: {quantity_or_grams}")
     
     pricing = inventory_db["pricing"]
     
