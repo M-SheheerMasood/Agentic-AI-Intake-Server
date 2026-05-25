@@ -35,7 +35,7 @@ def calculate_quote(item_type: str, quantity_or_grams: int):
 def log_manual_review(filepath: str, infill: str, color: str):
     """Saves the user's preferences for an un-sliced STL or 3MF file to a queue."""
     
-    print(f"\n[Agent Activity] ⚡ Executing 'log_manual_review' -> File: {filepath}, Infill: {infill}, Color: {color}")
+    print(f"\n[Agent Activity] Executing 'log_manual_review' -> File: {filepath}, Infill: {infill}, Color: {color}")
     
     try:
         with open("printing_queue.txt", "a") as f:
